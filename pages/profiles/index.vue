@@ -6,6 +6,7 @@
 
 <script>
   export default {
-    name: 'IndexProfile'
+    name: 'IndexProfile',
+    layout:'public'
   }
 </script>
