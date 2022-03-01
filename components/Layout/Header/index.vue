@@ -9,17 +9,19 @@
       </a-col>
       <a-col :span="4">
         <div class="user" v-if="isLogin">
-          <span style="margin-right: 24px">
+          <a-dropdown>
+            <a-menu slot="overlay" @click="handleMenuClick" class="menu-item">
+              <a-menu-item> <nuxt-link to="/">Logout</nuxt-link> </a-menu-item>
+              <a-menu-item> Info User </a-menu-item>
+            </a-menu>
             <a-badge :count="1"
               ><a-avatar shape="square" icon="user"
             /></a-badge>
-          </span>
+          </a-dropdown>
         </div>
         <div class="user" v-else>
-          <a-button ghost>
-              <nuxt-link to="/login">
-                  Login
-              </nuxt-link>
+          <a-button ghost @click="login">
+            <nuxt-link to="/"> Login </nuxt-link>
           </a-button>
         </div>
       </a-col>
@@ -29,12 +31,33 @@
 
 <script>
 export default {
-    name: 'Header',
-    data () {
-        return {
-            isLogin : false
-        }
+  name: 'Header',
+  data() {
+    return {
+      isLogin: null,
     }
+  },
+  created() {
+    if (typeof window !== 'undefined') {
+      const data = localStorage.getItem('token')
+      if (data) {
+        this.isLogin = data
+      } else {
+        this.isLogin = null
+      }
+    }
+  },
+  methods: {
+    login() {
+      localStorage.setItem('token', 1223)
+    },
+    handleMenuClick(e) {
+      if(e.key == 'item_0'){
+          localStorage.removeItem('token')
+          
+      }
+    },
+  },
 }
 </script>
 
@@ -53,7 +76,10 @@ export default {
   line-height: 64px;
   margin: 0 20px;
 }
-.user{
-    line-height: 64px;
+.user {
+  line-height: 64px;
+}
+.menu-item{
+    margin-top: 5px;
 }
 </style>
