@@ -21,7 +21,7 @@
         </div>
         <div class="user" v-else>
           <a-button ghost @click="login">
-            <nuxt-link to="/"> Login </nuxt-link>
+            <nuxt-link to="/login"> Login </nuxt-link>
           </a-button>
         </div>
       </a-col>
