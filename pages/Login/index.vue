@@ -24,7 +24,12 @@
           />
         </a-input>
       </a-form-model-item>
-      <a-button type="primary" html-type="submit" @click="submitForm('ruleForm')">Login</a-button>
+      <a-button
+        type="primary"
+        html-type="submit"
+        @click="submitForm('ruleForm')"
+        >Login</a-button
+      >
     </a-form-model>
   </div>
 </template>
@@ -53,9 +58,9 @@ export default {
     let validatePass = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('Please input the password'))
-      }else{
-        if(this.ruleForm.pass !== ''){
-          if(value.length < 6){
+      } else {
+        if (this.ruleForm.pass !== '') {
+          if (value.length < 6) {
             callback(new Error('Password must at latest 6 character'))
           }
           this.$refs.ruleForm.validateField('pass')
@@ -78,9 +83,14 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit')
-          console.log(valid)
-          
+          const value = this.ruleForm
+          console.log('email:', value.email)
+          console.log('password:', value.password)
+          // this.ruleForm = {
+          //   email: '',
+          //   password: ''
+          // }
+          this.$refs[formName].resetFields()
         } else {
           console.log('error submit')
           return false
