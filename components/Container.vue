@@ -5,14 +5,6 @@
         <Menu />
         <Content />
     </div>
-    <!-- <a-row>
-      <a-col>
-        <Menu />
-      </a-col>
-      <a-col>
-        <Content />
-      </a-col>
-    </a-row> -->
   </div>
 </template>
 
