@@ -24,12 +24,16 @@
           />
         </a-input>
       </a-form-model-item>
-      <a-button
+      
+      <div class="header-btn">
+        <a-button
         type="primary"
         html-type="submit"
         @click="submitForm('ruleForm')"
         >Login</a-button
       >
+        <nuxt-link to="/register">Create new account</nuxt-link>
+      </div>
     </a-form-model>
   </div>
 </template>
@@ -111,5 +115,14 @@ export default {
   font-size: 30px;
   color: #000;
   font-weight: 500;
+}
+.header-btn{
+  display: flex;
+  justify-content: space-between;
+}
+.header-btn>:nth-child(2){
+  display: block;
+  text-align: center;
+  margin: auto 0;
 }
 </style>
