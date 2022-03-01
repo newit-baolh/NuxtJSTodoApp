@@ -1,17 +1,34 @@
 <template>
   <div>
-      <Header/>
+    <Header />
+    <div class="menu-content">
+        <Menu />
+        <Content />
+    </div>
+    <!-- <a-row>
+      <a-col>
+        <Menu />
+      </a-col>
+      <a-col>
+        <Content />
+      </a-col>
+    </a-row> -->
   </div>
 </template>
 
 <script>
 import Header from '../components/Layout/Header'
+import Menu from './Layout/Menu/index.vue'
+import Content from './Layout/Content/index.vue'
 export default {
-    name: 'Container',
-    components: { Header }
+  name: 'Container',
+  components: { Header, Menu, Content },
 }
 </script>
 
 <style>
-
+.menu-content{
+    display: flex;
+    width: 100%;
+}
 </style>
