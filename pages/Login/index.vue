@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-    <p>Login</p>
+    <h2>Login</h2>
     <a-form-model ref="ruleForm" :rules="rules" :model="ruleForm">
       <a-form-model-item has-feedback prop="email">
         <a-input placeholder="Email" v-model="ruleForm.email" type="email">
@@ -111,11 +111,11 @@ export default {
   max-width: 450px;
   margin: 5% auto;
 }
-.form p {
+.form h2 {
   text-align: center;
-  font-size: 30px;
+  /* font-size: 30px;
   color: #000;
-  font-weight: 500;
+  font-weight: 500; */
 }
 .header-btn{
   display: flex;
