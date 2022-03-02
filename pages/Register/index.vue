@@ -118,7 +118,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           console.log({username: this.ruleForm.username,password: this.ruleForm.password,email: this.ruleForm.email});
-          this.$refs[formName].resetFields()
         } else {
           console.log('err submit')
         }
