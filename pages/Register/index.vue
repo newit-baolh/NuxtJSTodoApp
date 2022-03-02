@@ -119,6 +119,7 @@ export default {
         if (valid) {
           console.log({username: this.ruleForm.username,password: this.ruleForm.password,email: this.ruleForm.email});
           this.$refs[formName].resetFields()
+          // add comment
         } else {
           console.log('err submit')
         }
