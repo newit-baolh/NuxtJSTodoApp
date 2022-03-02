@@ -24,7 +24,7 @@
           />
         </a-input>
       </a-form-model-item>
-      
+
       <div class="header-btn">
         <a-button
         type="primary"
@@ -47,7 +47,8 @@ export default {
         callback(new Error('Please input the email'))
       } else {
         if (this.ruleForm.email !== '') {
-          let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}')
+          // let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}')
+          let regex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
           let result = regex.test(value)
           if (result) {
             callback()
