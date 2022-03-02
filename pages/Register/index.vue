@@ -118,10 +118,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           console.log({username: this.ruleForm.username,password: this.ruleForm.password,email: this.ruleForm.email});
-<<<<<<< HEAD
-=======
           this.$refs[formName].resetFields()
->>>>>>> 9156d54 (validate register form)
         } else {
           console.log('err submit')
         }
